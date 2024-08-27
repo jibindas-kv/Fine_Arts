@@ -1,15 +1,16 @@
 import 'package:fine_arts/Admin/Admin_navigation.dart';
+import 'package:fine_arts/Orgnaizer/Organizer_registration.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Admin_login extends StatefulWidget {
-  const Admin_login({super.key});
+class Organizer_login extends StatefulWidget {
+  const Organizer_login({super.key});
 
   @override
-  State<Admin_login> createState() => _Admin_loginState();
+  State<Organizer_login> createState() => _Organizer_loginState();
 }
 
-class _Admin_loginState extends State<Admin_login> {
+class _Organizer_loginState extends State<Organizer_login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,10 +20,19 @@ class _Admin_loginState extends State<Admin_login> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-
-
               SizedBox(
-                height: 200,
+                height: 150,
+              ),
+              Container(
+                height: 110,
+                width: 110,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("assets/theme.png"),
+                        fit: BoxFit.cover)),
+              ),
+              SizedBox(
+                height: 50,
               ),
               Center(
                   child: Text(
@@ -41,7 +51,10 @@ class _Admin_loginState extends State<Admin_login> {
                     padding: const EdgeInsets.only(left: 10, right: 10),
                     child: TextFormField(
                       decoration: InputDecoration(
-                        prefixIcon: Icon(CupertinoIcons.person_solid,color: Colors.grey,),
+                          prefixIcon: Icon(
+                            CupertinoIcons.person_solid,
+                            color: Colors.grey,
+                          ),
                           hintText: 'Usernames',
                           focusColor: Colors.white,
                           border: OutlineInputBorder(
@@ -62,7 +75,10 @@ class _Admin_loginState extends State<Admin_login> {
                     padding: const EdgeInsets.only(left: 10, right: 10),
                     child: TextFormField(
                       decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.lock,color: Colors.grey,),
+                          prefixIcon: Icon(
+                            Icons.lock,
+                            color: Colors.grey,
+                          ),
                           hintText: 'Passsword',
                           focusColor: Colors.white,
                           border: OutlineInputBorder(
@@ -101,7 +117,25 @@ class _Admin_loginState extends State<Admin_login> {
                     )),
                   ),
                 ),
-              )
+              ),
+              SizedBox(
+                height: 35,
+              ),
+              TextButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return Organizer_registration();
+                      },
+                    ));
+                  },
+                  child: Text(
+                    "Create New Account",
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Color.fromRGBO(32, 69, 99, 1),
+                    ),
+                  ))
             ],
           ),
         ),
