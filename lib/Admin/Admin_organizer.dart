@@ -12,7 +12,7 @@ class Admin_organizer extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         title: Text(
-          "                       Organizer List",
+          "                       participants List",
           style: TextStyle(
               color: Colors.black, fontWeight: FontWeight.w500, fontSize: 22),
         ),
@@ -42,7 +42,6 @@ class Admin_organizer extends StatelessWidget {
                   child: Row(
                     children: [
                       InkWell(
-
                         onTap: () {
                           Navigator.push(context, MaterialPageRoute(
                             builder: (context) {

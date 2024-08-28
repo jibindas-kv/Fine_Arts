@@ -1,4 +1,5 @@
 import 'package:fine_arts/Admin/Admin_navigation.dart';
+import 'package:fine_arts/Orgnaizer/Organizer_navigation.dart';
 import 'package:fine_arts/Orgnaizer/Organizer_registration.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -97,7 +98,7 @@ class _Organizer_loginState extends State<Organizer_login> {
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return Admin_navigation();
+                        return Organizer_navigation();
                       },
                     ));
                   },

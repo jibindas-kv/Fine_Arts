@@ -1,77 +1,47 @@
-import 'package:fine_arts/Orgnaizer/Organizer_navigation.dart';
+import 'package:fine_arts/Admin/Admin_navigation.dart';
+import 'package:fine_arts/Admin/Admin_organizer.dart';
+import 'package:fine_arts/Orgnaizer/Organizer_appeal_list.dart';
+import 'package:fine_arts/Orgnaizer/Organizer_update_result.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Organizer_registration extends StatefulWidget {
-  const Organizer_registration({super.key});
+class Organizer_appeal_details extends StatefulWidget {
+  const Organizer_appeal_details({super.key});
 
   @override
-  State<Organizer_registration> createState() => _Organizer_registrationState();
+  State<Organizer_appeal_details> createState() => _Organizer_appeal_detailsState();
 }
 
-class _Organizer_registrationState extends State<Organizer_registration> {
+class _Organizer_appeal_detailsState extends State<Organizer_appeal_details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return Organizer_appeal_list();
+                },
+              ));
+            },
+            icon: Icon(CupertinoIcons.back,color: Colors.black,)),
+        title: Text(
+          "            Appeal Detail",
+          style: TextStyle(
+              color: Colors.black, fontWeight: FontWeight.w500, fontSize: 20.sp),
+        ),
+      ),
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.only(right: 30, left: 30),
+        padding: const EdgeInsets.only(right: 10, left: 10),
         child: SingleChildScrollView(
           child: Column(
             children: [
-
               SizedBox(
-                height: 50.h,
-              ),
-              Container(
-                height: 110.h,
-                width: 110.w,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("assets/theme.png"),
-                        fit: BoxFit.cover)),
-              ),
-              SizedBox(
-                height: 30.h,
-              ),
-              Center(
-                  child: Text(
-                    'Registration',
-                    style: TextStyle(
-                        fontSize: 30.sp,
-                        fontWeight: FontWeight.w900,
-                        color: Color.fromRGBO(32, 69, 99, 1)),
-                  )),
-              SizedBox(height: 20.h,),
-              Row(
-                children: [
-                  SizedBox(
-                    width: 10.w,
-                  ),
-                  Text(
-                    'Name',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                child: TextFormField(
-                  decoration: InputDecoration(
-
-                      focusColor: Colors.white,
-                      border: OutlineInputBorder(
-                          borderSide:
-                          BorderSide(color: Colors.grey, width: 2.w),
-                          borderRadius: BorderRadius.circular(5)),
-                      fillColor: Colors.white,
-                      filled: true),
-                ),
-              ),
-              SizedBox(
-                height: 20.h,
+                height: 10.h,
               ),
               Column(
                 children: [
@@ -81,15 +51,80 @@ class _Organizer_registrationState extends State<Organizer_registration> {
                         width: 10.w,
                       ),
                       Text(
-                        'Phone NO',
+                        'Evant Name',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18.sp),
+                            fontWeight: FontWeight.bold, fontSize: 16.sp),
                       ),
                     ],
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 10, right: 10),
                     child: TextFormField(
+                      readOnly: true,
+                      decoration: InputDecoration(
+                          hintText: 'Margamkali',
+                          focusColor: Colors.white,
+                          border: OutlineInputBorder(
+                              borderSide:
+                              BorderSide(color: Colors.grey, width: 2),
+                              borderRadius: BorderRadius.circular(5)),
+                          fillColor: Colors.white,
+                          filled: true),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 20.h
+                ,
+              ),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                      Text(
+                        'Phone No',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16.sp),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: TextFormField(
+                      readOnly: true,
+                      decoration: InputDecoration(
+                          hintText: 'www.httrsgssbz',
+                          hintStyle: TextStyle(color: Colors.blue),
+                          focusColor: Colors.white,
+                          border: OutlineInputBorder(
+                              borderSide:
+                              BorderSide(color: Colors.grey, width: 2),
+                              borderRadius: BorderRadius.circular(5)),
+                          fillColor: Colors.white,
+                          filled: true),
+                    ),
+                  ),
+                  SizedBox(height: 20.h,),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                      Text(
+                        'Description',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 17.sp),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: TextFormField(
+                      maxLines: 7,
                       decoration: InputDecoration(
                           hintText: '',
                           focusColor: Colors.white,
@@ -102,65 +137,7 @@ class _Organizer_registrationState extends State<Organizer_registration> {
                     ),
                   ),
                   SizedBox(
-                    height: 20.h,
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 10.w,
-                      ),
-                      Text(
-                        'Email',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18.sp),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10, right: 10),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                          hintText: '',
-                          focusColor: Colors.white,
-                          border: OutlineInputBorder(
-                              borderSide:
-                              BorderSide(color: Colors.grey, width: 2.w),
-                              borderRadius: BorderRadius.circular(5)),
-                          fillColor: Colors.white,
-                          filled: true),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 10.w,
-                      ),
-                      Text(
-                        'ID Number',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18.sp),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10, right: 10),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                          hintText: '',
-                          focusColor: Colors.white,
-                          border: OutlineInputBorder(
-                              borderSide:
-                              BorderSide(color: Colors.grey, width: 2.w),
-                              borderRadius: BorderRadius.circular(5)),
-                          fillColor: Colors.white,
-                          filled: true),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 30.h,
+                    height: 170.h,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -168,23 +145,40 @@ class _Organizer_registrationState extends State<Organizer_registration> {
                       InkWell(
                         onTap: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context) {
-                            return Organizer_navigation();
+                            return Organizer_update_result();
                           },));
                         },
                         child: Container(
                           height: 40.h,
-                          width: 300.w,
+                          width: 130.h,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
-                            color: Color.fromRGBO(32, 69, 99, 1),
+                            color: Colors.green.shade900,
                           ),
                           child: Center(
                               child: Text(
-                                'Submit',
+                                'Accept',
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, color: Colors.white),
                               )),
                         ),
+                      ),
+                      SizedBox(
+                        width: 30.w,
+                      ),
+                      Container(
+                        height: 40.h,
+                        width: 130.h,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: Colors.red.shade900,
+                        ),
+                        child: Center(
+                            child: Text(
+                              'reject',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, color: Colors.white),
+                            )),
                       ),
                     ],
                   )

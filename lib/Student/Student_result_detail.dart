@@ -1,30 +1,15 @@
-import 'dart:io';
-import 'package:fine_arts/Orgnaizer/Organizer_navigation.dart';
+import 'package:fine_arts/Student/Student_Navigation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
-class Organizer_event_detail extends StatefulWidget {
-  const Organizer_event_detail({super.key});
+class Student_result_details extends StatefulWidget {
+  const Student_result_details({super.key});
 
   @override
-  State<Organizer_event_detail> createState() => _Organizer_event_detailState();
+  State<Student_result_details> createState() => _Student_result_detailsState();
 }
 
-class _Organizer_event_detailState extends State<Organizer_event_detail> {
-  File? _image;
-
-  Future<void> _pickImage() async {
-    final pickedFile =
-        await ImagePicker().pickImage(source: ImageSource.gallery);
-
-    if (pickedFile != null) {
-      setState(() {
-        _image = File(pickedFile.path);
-      });
-    }
-  }
-
+class _Student_result_detailsState extends State<Student_result_details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +18,7 @@ class _Organizer_event_detailState extends State<Organizer_event_detail> {
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
                 builder: (context) {
-                  return Organizer_navigation();
+                  return Student_navigation();
                 },
               ));
             },
@@ -185,42 +170,20 @@ class _Organizer_event_detailState extends State<Organizer_event_detail> {
           Padding(
             padding: const EdgeInsets.only(left: 30, right: 30),
             child: Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(),
-                    child: _image == null
-                        ? Center(
-                            child: Container(
-                              height: 100,
-                              width: 100,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage("assets/image.png"))),
-                            ),
-                          )
-                        : Image.file(
-                            _image!,
-                            fit: BoxFit.cover,
-                          ),
-                  ),
-                ],
+              child: Container(
+                height: 100,
+                width: 100,
+                decoration: BoxDecoration(
+                    image:
+                    DecorationImage(image: AssetImage("assets/gallery.png"))),
               ),
-              height: 200,
+              height: 300,
               width: 400,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(5),
                   border: Border.all(color: Colors.grey)),
             ),
-          ),
-          SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: _pickImage,
-            child: Text('Pick Image'),
           ),
         ],
       ),
