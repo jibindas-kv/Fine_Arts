@@ -1,8 +1,9 @@
 
 
-import 'package:fine_arts/Student/Student_Home.dart';
-import 'package:fine_arts/Student/Student_Result.dart';
+import 'package:fine_arts/Student/Student_home.dart';
+import 'package:fine_arts/Student/Student_result.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class Student_navigation extends StatefulWidget {
@@ -49,8 +50,8 @@ class _StdListState extends State<Student_navigation> {
                       tabs: [
                         Tab(
                           child: Container(
-                            height: 30,
-                            width: 100,
+                            height: 40.h,
+                            width: 165.w,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(5)),
                             child: Center(
@@ -64,8 +65,8 @@ class _StdListState extends State<Student_navigation> {
                         ),
                         Tab(
                           child: Container(
-                            height: 30,
-                            width: 100,
+                            height: 30.h,
+                            width: 165.w,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(5)),
                             child: Center(

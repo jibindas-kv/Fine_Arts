@@ -9,6 +9,7 @@ import 'package:fine_arts/Admin/Admin_organizer.dart';
 import 'package:fine_arts/Admin/Admin_organizer_add.dart';
 import 'package:fine_arts/Admin/Admin_organizer_assing.dart';
 import 'package:fine_arts/Admin/Admin_student_detail.dart';
+import 'package:fine_arts/Fine_Arts.dart';
 import 'package:fine_arts/Orgnaizer/Organizer_add_result.dart';
 import 'package:fine_arts/Orgnaizer/Organizer_appeal.dart';
 import 'package:fine_arts/Orgnaizer/Organizer_appeal_details.dart';
@@ -22,7 +23,7 @@ import 'package:fine_arts/Orgnaizer/Organizer_login.dart';
 import 'package:fine_arts/Orgnaizer/Organizer_navigation.dart';
 import 'package:fine_arts/Orgnaizer/Organizer_registration.dart';
 import 'package:fine_arts/Orgnaizer/Organizer_update_result.dart';
-import 'package:fine_arts/Student/Studentlogin.dart';
+import 'package:fine_arts/Student/Student_login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -60,7 +61,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: student_login(),
+        home: Fine_Arts(),
       ),
     );
   }

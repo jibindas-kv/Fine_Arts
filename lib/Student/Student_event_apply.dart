@@ -1,33 +1,42 @@
 
-import 'package:fine_arts/Student/Student_Home.dart';
+import 'package:fine_arts/Student/Student_event_details.dart';
+import 'package:fine_arts/Student/Student_home.dart';
+import 'package:fine_arts/Student/Student_navigation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Student_eventapply extends StatefulWidget {
-  Student_eventapply({super.key});
+class Student_event_apply extends StatefulWidget {
+  Student_event_apply({super.key});
 
   @override
-  State<Student_eventapply> createState() => _Student_eventapplyState();
+  State<Student_event_apply> createState() => _Student_event_applyState();
 }
 
-class _Student_eventapplyState extends State<Student_eventapply> {
+class _Student_event_applyState extends State<Student_event_apply> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
-        leading: IconButton(onPressed: () {
-        }, icon: Icon(CupertinoIcons.back)),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return Student_event_details();
+                },
+              ));
+            },
+            icon: Icon(CupertinoIcons.back)),
         backgroundColor: Colors.white,
         title: Text(
-          "                Apply",
+          "                    Apply",
           style: TextStyle(
               color: Colors.black, fontWeight: FontWeight.w500, fontSize: 22),
         ),
       ),
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.only(right: 30, left: 30),
+        padding: const EdgeInsets.only(right: 30, left: 30,top: 20),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -47,7 +56,7 @@ class _Student_eventapplyState extends State<Student_eventapply> {
                 ],
               ),
               SizedBox(
-                height: 50,
+                height: 20.h,
               ),
               Column(
                 children: [
@@ -57,7 +66,7 @@ class _Student_eventapplyState extends State<Student_eventapply> {
                         width: 10,
                       ),
                       Text(
-                        'ID Number',
+                        'Name',
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 18),
                       ),
@@ -79,7 +88,7 @@ class _Student_eventapplyState extends State<Student_eventapply> {
                 ],
               ),
               SizedBox(
-                height: 30,
+                height: 30.w,
               ),
               Column(
                 children: [
@@ -109,7 +118,7 @@ class _Student_eventapplyState extends State<Student_eventapply> {
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 30.w,
                   ),
 
                 ],
@@ -142,7 +151,7 @@ class _Student_eventapplyState extends State<Student_eventapply> {
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 30.w,
                   ),
                 ],
               ),
@@ -176,10 +185,10 @@ class _Student_eventapplyState extends State<Student_eventapply> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 30),
+                padding: const EdgeInsets.only(top: 50),
                 child: InkWell(onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return Student_home();
+                    return Student_navigation();
                   },));
                 },
                   child: Container(

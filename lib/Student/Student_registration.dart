@@ -1,14 +1,16 @@
+import 'package:fine_arts/Student/Student_navigation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class student_reg extends StatefulWidget {
-  const student_reg({super.key});
+class student_registration extends StatefulWidget {
+  const student_registration({super.key});
 
   @override
-  State<student_reg> createState() => _student_regState();
+  State<student_registration> createState() => _student_registrationState();
 }
 
-class _student_regState extends State<student_reg> {
+class _student_registrationState extends State<student_registration> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,12 +27,12 @@ class _student_regState extends State<student_reg> {
                   child: Text(
                     'Registration',
                     style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 25.sp,
                         fontWeight: FontWeight.w900,
-                        color: Color.fromRGBO(32, 69, 99, 1)),
+                        color: Colors.black),
                   )),
               SizedBox(
-                height: 20,
+                height: 40.sp,
               ),
               Column(
                 children: [Padding(
@@ -164,22 +166,30 @@ class _student_regState extends State<student_reg> {
                   ),
                 ],
               ),
+              SizedBox(height: 45.h,),
               Padding(
                 padding: const EdgeInsets.only(top: 30),
-                child: Container(
-                  height: 55,
-                  width: 330,
-                  decoration: BoxDecoration(
-                      color: Color.fromRGBO(32, 69, 99, 1),
-                      borderRadius: BorderRadius.circular(5)),
-                  child: Center(
-                      child: Text(
-                        'SUBMIT',
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      )),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return Student_navigation();
+                    },));
+                  },
+                  child: Container(
+                    height: 55,
+                    width: 330,
+                    decoration: BoxDecoration(
+                        color: Color.fromRGBO(32, 69, 99, 1),
+                        borderRadius: BorderRadius.circular(5)),
+                    child: Center(
+                        child: Text(
+                          'SUBMIT',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        )),
+                  ),
                 ),
               ),
             ],

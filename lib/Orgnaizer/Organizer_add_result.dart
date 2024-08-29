@@ -66,9 +66,8 @@ class _Organizer_add_resultState extends State<Organizer_add_result> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   DropdownButton(
-
                     dropdownColor: Colors.white,
-                    iconSize:40,
+                    iconSize: 40,
                     icon: Icon(Icons.keyboard_arrow_down_rounded),
                     value: _selectedItem,
                     items: _options.map((String value) {

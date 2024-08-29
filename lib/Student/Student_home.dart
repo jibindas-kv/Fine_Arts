@@ -1,19 +1,23 @@
-import 'package:fine_arts/Student/Student_result_detail.dart';
+import 'package:fine_arts/Student/Student_event_details.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Student_Result extends StatelessWidget {
+class Student_home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
           backgroundColor: Colors.white,
-          title: Center(child: Text("Result",style: TextStyle(
+          title: Center(child: Text("Event",style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.w500,
               fontSize: 22),)),),
         backgroundColor: Colors.white,
-        body: Column(
+        body: ListView.builder(
+    itemCount: 1,
+    itemBuilder: (context, index) {
+    return Column(
           children: [
             SizedBox(
               height: 20,
@@ -34,16 +38,16 @@ class Student_Result extends StatelessWidget {
                         width: 20,
                       ),
                       Container(
-                        height: 40,
-                        width: 40,
+                        height: 30.h,
+                        width: 30.w,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: AssetImage("assets/gallery.png"),
+                                image: AssetImage("assets/image.png"),
                                 fit: BoxFit.cover)),
                       ),
                       InkWell(onTap: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) {
-                          return Student_result_details();
+                          return Student_event_details();
                         },));
                       },
                         child: Text(
@@ -78,11 +82,11 @@ class Student_Result extends StatelessWidget {
                         width: 20,
                       ),
                       Container(
-                        height: 40,
-                        width: 40,
+                        height: 30.h,
+                        width: 30.w,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: AssetImage("assets/gallery.png"),
+                                image: AssetImage("assets/image.png"),
                                 fit: BoxFit.cover)),
                       ),
                       Text(
@@ -98,6 +102,10 @@ class Student_Result extends StatelessWidget {
               ),
             )
           ],
-        ));
+        );
+    },
+          // itemCount: 20,
+        ),
+              );
   }
 }

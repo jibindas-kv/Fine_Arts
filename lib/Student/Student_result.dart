@@ -1,15 +1,15 @@
-import 'package:fine_arts/Student/Student_event_details.dart';
+import 'package:fine_arts/Student/Student_result_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Student_home extends StatelessWidget {
+class Student_Result extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
           backgroundColor: Colors.white,
-          title: Center(child: Text("Event",style: TextStyle(
+          title: Center(child: Text("Result",style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.w500,
               fontSize: 22),)),),
@@ -35,16 +35,16 @@ class Student_home extends StatelessWidget {
                         width: 20,
                       ),
                       Container(
-                        height: 40.h,
-                        width: 40.w,
+                        height: 30.h,
+                        width: 30.w,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: AssetImage("assets/gallery.png"),
+                                image: AssetImage("assets/image.png"),
                                 fit: BoxFit.cover)),
                       ),
                       InkWell(onTap: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) {
-                          return Student_event_details();
+                          return Student_result_details();
                         },));
                       },
                         child: Text(
@@ -79,11 +79,11 @@ class Student_home extends StatelessWidget {
                         width: 20,
                       ),
                       Container(
-                        height: 40.h,
-                        width: 40.w,
+                        height: 30.h,
+                        width: 30.h,
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: AssetImage("assets/gallery.png"),
+                                image: AssetImage("assets/image.png"),
                                 fit: BoxFit.cover)),
                       ),
                       Text(

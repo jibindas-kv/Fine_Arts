@@ -1,16 +1,17 @@
-import 'package:fine_arts/Student/Student_Navigation.dart';
+import 'package:fine_arts/Student/Student_navigation.dart';
+import 'package:fine_arts/Student/Student_registration.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class student_login extends StatefulWidget {
-  const student_login({super.key});
+class Student_login extends StatefulWidget {
+  const Student_login({super.key});
 
   @override
-  State<student_login> createState() => _student_loginState();
+  State<Student_login> createState() => _Student_loginState();
 }
 
-class _student_loginState extends State<student_login> {
+class _Student_loginState extends State<Student_login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,13 +22,14 @@ class _student_loginState extends State<student_login> {
           child: Column(
             children: [
               SizedBox(
-                height: 200.h,
+                height: 180.h,
               ),
               Center(
                   child: Text(
                     'Login',
                     style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 30.sp
+                        ,
                         fontWeight: FontWeight.w900,
                         color: Color.fromRGBO(32, 69, 99, 1)),
                   )),
@@ -75,15 +77,15 @@ class _student_loginState extends State<student_login> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 30),
+                padding: const EdgeInsets.only(top: 30,left: 10,right: 10),
                 child: InkWell(onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return Student_navigation();
                   },));
                 },
                   child: Container(
-                    height: 55.h,
-                    width: 330.w,
+                    height: 43.h,
+                    width: 320.w,
                     decoration: BoxDecoration(
                         color: Color.fromRGBO(32, 69, 99, 1),
                         borderRadius: BorderRadius.circular(5)),
@@ -99,12 +101,21 @@ class _student_loginState extends State<student_login> {
                 ),
               ),
               SizedBox(height: 30.h,),
-              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Text("Create New Account",
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [TextButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return student_registration();
+                      },
+                    ));
+                  },
+                  child: Text(
+                    "Create New Account",
                     style: TextStyle(
-                        fontSize: 20.sp,
-                        // fontWeight: FontWeight.bold,
-                        color: Colors.grey.shade800)),
+                      fontSize: 16.sp,
+                      color: Color.fromRGBO(32, 69, 99, 1),
+                    ),
+                  ))
               ]),
             ],
           ),

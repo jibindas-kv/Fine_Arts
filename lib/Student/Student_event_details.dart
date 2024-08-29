@@ -1,6 +1,8 @@
+import 'package:fine_arts/Student/Student_navigation.dart';
 import 'package:fine_arts/Student/Student_event_apply.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Student_event_details extends StatefulWidget {
   const Student_event_details({super.key});
@@ -16,10 +18,13 @@ class _Student_event_detailsState extends State<Student_event_details> {
       appBar: AppBar(
 
         leading: IconButton(onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return Student_navigation();
+          },));
         }, icon: Icon(CupertinoIcons.back)),
         backgroundColor: Colors.white,
         title: Text(
-          "          Event Detail",
+          "               Event Detail",
           style: TextStyle(
               color: Colors.black, fontWeight: FontWeight.w500, fontSize: 22),
         ),
@@ -49,7 +54,7 @@ class _Student_event_detailsState extends State<Student_event_details> {
                   ],
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 20.h,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 60,right: 40),
@@ -61,105 +66,114 @@ class _Student_event_detailsState extends State<Student_event_details> {
                         style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w900,
-                            fontSize: 23),
+                            fontSize: 20.sp),
                       ),
                     ],
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 10.h,
                 ),
-                Row(
-                  children: [
-                    Text(
-                      "Date",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18),
-                    ),
-                    SizedBox(
-                      width: 60,
-                    ),
-                    Text(
-                      "18/07/2023",
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                Row( children: [
-                  Text(
-                    "Stage number",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18),
+                Padding(
+                  padding: const EdgeInsets.only(left: 18),
+                  child: Column(
+                    children: [
+
+                  Row(
+                    children: [
+                      Text(
+                        "Date",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18),
+                      ),
+                      SizedBox(
+                        width: 90.w,
+                      ),
+                      Text(
+                        "18/07/2023",
+                        style: TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18),
+                      ),
+                    ],
                   ),
                   SizedBox(
-                    width: 50,
+                    height: 40,
                   ),
-                  Text(
-                    "02",
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18),
+                  Row( children: [
+                    Text(
+                      "Stage number",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18),
+                    ),
+                    SizedBox(
+                      width: 25.w,
+                    ),
+                    Text(
+                      "02",
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18),
+                    ),
+                  ]),
+                  SizedBox(
+                    height: 40,
                   ),
-                ]),
-                SizedBox(
-                  height: 40,
-                ),
-                Row(
+                  Row(
 
-                  children: [
-                    Text(
-                      "Time",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18),
-                    ),
-                    SizedBox(
-                      width: 67,
-                    ),
-                    Text(
-                      "1.30 pm",
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                Row(
-                  children: [
-                    Text(
-                      "Location",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18),
-                    ),
-                    SizedBox(
-                      width: 77,
-                    ),
-                    Text(
-                      "Ground",
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18),
-                    ),
-                  ],
+                    children: [
+                      Text(
+                        "Time",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18),
+                      ),
+                      SizedBox(
+                        width: 88.w,
+                      ),
+                      Text(
+                        "1.30 pm",
+                        style: TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "Location",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18),
+                      ),
+                      SizedBox(
+                        width: 62.w,
+                      ),
+                      Text(
+                        "Ground",
+                        style: TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 18),
+                      ),
+                    ],
+                  ),
+
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 40,
@@ -173,7 +187,7 @@ class _Student_event_detailsState extends State<Student_event_details> {
             children: [
               InkWell(onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Student_eventapply();
+                  return Student_event_apply();
                 },));
               },
                 child: Container(
