@@ -175,19 +175,29 @@ class _Admin_student_detailState extends State<Admin_student_detail> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                height: 50,
-                width: 160,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Colors.green.shade900,
+              InkWell(
+
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return Admin_navigation();
+                    },
+                  ));
+                },
+                child: Container(
+                  height: 50,
+                  width: 160,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: Colors.green.shade900,
+                  ),
+                  child: Center(
+                      child: Text(
+                        'Accept',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      'Accept',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
               ),
               SizedBox(
                 width: 30,

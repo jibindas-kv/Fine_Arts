@@ -48,58 +48,68 @@ class _Admin_eventState extends State<Admin_event> {
           children: [
             Row(
               children: [
-                Container(
-                  height: 140,
-                  width: 371,
-                  decoration: BoxDecoration(
-                      color: Color.fromRGBO(85, 141, 187, 1),
-                      borderRadius: BorderRadius.circular(8)),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Row(
-                        children: [
-                          SizedBox(
-                            width: 120,
-                          ),
-                          Text(
-                            "Mohiniyattam",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 20),
-                          ),
-                          SizedBox(
-                            width: 90,
-                          ),
-                          Icon(
-                            CupertinoIcons.delete,
-                            color: Colors.black,
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        children: [
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "Date   : 7/12/2023\n"
-                            "Time  : 10:00\n"
-                            "Stage : 3",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 18),
-                          ),
-                        ],
-                      )
-                    ],
+                InkWell(
+
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return Admin_event_add();
+                      },
+                    ));
+                  },
+                  child: Container(
+                    height: 140,
+                    width: 371,
+                    decoration: BoxDecoration(
+                        color: Color.fromRGBO(85, 141, 187, 1),
+                        borderRadius: BorderRadius.circular(8)),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 120,
+                            ),
+                            Text(
+                              "Mohiniyattam",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 20),
+                            ),
+                            SizedBox(
+                              width: 90,
+                            ),
+                            Icon(
+                              CupertinoIcons.delete,
+                              color: Colors.black,
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "Date   : 7/12/2023\n"
+                              "Time  : 10:00\n"
+                              "Stage : 3",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 18),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ],

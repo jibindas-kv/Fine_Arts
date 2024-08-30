@@ -20,7 +20,6 @@ class _Fine_ArtsState extends State<Fine_Arts> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(32, 69, 99, 1),
       body: Stack(children: [
-
         Column(
           children: [
             SizedBox(
@@ -154,14 +153,13 @@ class _Fine_ArtsState extends State<Fine_Arts> {
             )
           ],
         ),
-
         Container(
-          height: 900,
-          width: 700,
+          height: 1000,
+          width: 900,
           child: Lottie.asset("assets/stage.json", repeat: false),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 155,top: 332),
+          padding: const EdgeInsets.only(left: 155, top: 332),
           child: InkWell(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(
@@ -173,12 +171,11 @@ class _Fine_ArtsState extends State<Fine_Arts> {
             child: Container(
               height: 100,
               width: 100,
-
             ),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 155,top: 452),
+          padding: const EdgeInsets.only(left: 155, top: 452),
           child: InkWell(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(
@@ -193,9 +190,8 @@ class _Fine_ArtsState extends State<Fine_Arts> {
             ),
           ),
         ),
-
         Padding(
-          padding: const EdgeInsets.only(left: 155,top: 572),
+          padding: const EdgeInsets.only(left: 155, top: 572),
           child: InkWell(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(
