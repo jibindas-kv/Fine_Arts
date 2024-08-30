@@ -15,92 +15,55 @@ class Student_home extends StatelessWidget {
               fontSize: 22),)),),
         backgroundColor: Colors.white,
         body: ListView.builder(
-    itemCount: 1,
+    itemCount: 3,
     itemBuilder: (context, index) {
     return Column(
           children: [
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 30, right: 30),
-              child: Card(
-                shadowColor: Colors.black,
-                shape: BeveledRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                    side: BorderSide(color: Colors.black, width: 0.5)),
-                color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Container(
-                        height: 30.h,
-                        width: 30.w,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage("assets/image.png"),
-                                fit: BoxFit.cover)),
-                      ),
-                      InkWell(onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) {
-                          return Student_event_details();
-                        },));
-                      },
-                        child: Text(
-                          "            Mohiniyattam",
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Student_event_details();
+                  },));
+                },
+                child: Card(
+                  shadowColor: Colors.black,
+                  shape: BeveledRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                      side: BorderSide(color: Colors.black, width: 0.5)),
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Container(
+                          height: 30.h,
+                          width: 30.w,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage("assets/image.png"),
+                                  fit: BoxFit.cover)),
+                        ),
+                        Text(
+                          "     Mohiniyattam",
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w500,
                               fontSize: 18),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 30, right: 30),
-              child: Card(
-                shadowColor: Colors.black,
-                shape: BeveledRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                    side: BorderSide(color: Colors.black, width: 0.5)),
-                color: Colors.white,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Container(
-                        height: 30.h,
-                        width: 30.w,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage("assets/image.png"),
-                                fit: BoxFit.cover)),
-                      ),
-                      Text(
-                        "            Kolkali",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 18),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            )
           ],
         );
     },

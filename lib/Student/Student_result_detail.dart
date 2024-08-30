@@ -19,7 +19,7 @@ class _Student_result_detailsState extends State<Student_result_details> {
 
   Future<void> _pickImage() async {
     final pickedFile =
-    await ImagePicker().pickImage(source: ImageSource.gallery);
+        await ImagePicker().pickImage(source: ImageSource.gallery);
 
     if (pickedFile != null) {
       setState(() {
@@ -27,6 +27,7 @@ class _Student_result_detailsState extends State<Student_result_details> {
       });
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -173,7 +174,9 @@ class _Student_result_detailsState extends State<Student_result_details> {
               ),
             ],
           ),
-          SizedBox(height: 10.h,),
+          SizedBox(
+            height: 10.h,
+          ),
           Padding(
             padding: const EdgeInsets.only(left: 40, right: 30),
             child: Row(
@@ -192,23 +195,32 @@ class _Student_result_detailsState extends State<Student_result_details> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(),
+                    width: 315,
+                    height: 240,
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(10)),
                     child: _image == null
                         ? Center(
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage("assets/image.png"))),
-                      ),
-                    )
+                            child: Container(
+                              child: ElevatedButton(
+                                style: ButtonStyle(),
+                                onPressed: _pickImage,
+                                child: Image(
+                                    image: AssetImage("assets/image.png")),
+                              ),
+                              height: 350,
+                              width: 300,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                      image: AssetImage(""),
+                                      fit: BoxFit.cover)),
+                            ),
+                          )
                         : Image.file(
-                      _image!,
-                      fit: BoxFit.cover,
-                    ),
+                            _image!,
+                            fit: BoxFit.cover,
+                          ),
                   ),
                 ],
               ),
@@ -220,11 +232,7 @@ class _Student_result_detailsState extends State<Student_result_details> {
                   border: Border.all(color: Colors.grey)),
             ),
           ),
-          SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: _pickImage,
-            child: Text('Pick Image'),
-          ),
+          SizedBox(height: 40),
           SizedBox(
             height: 40.h,
           ),
@@ -248,10 +256,10 @@ class _Student_result_detailsState extends State<Student_result_details> {
                   ),
                   child: Center(
                       child: Text(
-                        'Appeal',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.white),
-                      )),
+                    'Appeal',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.white),
+                  )),
                 ),
               ),
             ],
